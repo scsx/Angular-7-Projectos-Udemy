@@ -1,0 +1,19 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Tarefas</h1>
+            <p class="lead text-muted">Você tem dificuldade e cuidar de sua agenda e dos seus afazeres de cada dia? Um
+                gerenciador de tarefas vai ajudar bastante!</p>
+            <p>
+                <a href="javascript:void(0);" class="btn btn-success my-2 btn-lg"
+                    [routerLink]="['/tarefas/cadastrar']">Nova tarefa</a>
+            </p>
+        </div>
+    </section>
+    <div class="album py-5">
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,96 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700&display=swap');
+
+* {
+    font-family: 'Libre Baskerville', serif;
+}
+
+html,
+body {
+    min-height: 100%;
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/leaves-pattern.png);
+}
+
+select,
+option,
+.btn,
+.form-check-label,
+.form-control,
+.input-group-text {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.jumbotron {
+    padding: 3rem 2rem;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #c4d0dc;
+    border-bottom: 2px solid #b0c1d2;
+
+    h1 {
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        padding-top: 4px;
+    }
+}
+
+.card-text.concluida {
+    color: grey;
+    // font-style: italic; // passou para directive
+}
+
+
+.prioridade {
+    position: relative;
+    //overflow: hidden;
+    border: 1px solid #8b8b8b;
+    width: 50%;
+    height: 12px;
+    margin-left: 25%;
+    border-radius: .25rem;
+    background: linear-gradient(to right, #30ad22 0%,#caea2c 50%,#ff8f3a 100%);
+    padding: 0; 
+
+    &.concluida {
+        background: #c7c7c7;
+    }
+    table {
+        position: absolute;
+        z-index: 2;
+        border: none;
+        border-radius: .25rem;
+        height: 11px;
+        td {
+            border: none;
+            padding: 0;
+            width: 25%;
+        }
+        td:not(:first-child) {
+            border-left: 1px solid #8b8b8b;
+        }
+    }
+
+    .progress {
+        position: absolute;
+        z-index: 1;
+        background: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        height: 100%;
+
+        .progress-bar {
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            right: 0;
+            height: 100%;
+        }
+    }
+}
