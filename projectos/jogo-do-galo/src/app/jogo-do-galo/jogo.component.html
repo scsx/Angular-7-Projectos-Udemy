@@ -1,5 +1,5 @@
 <div id="all">
-    <h2>Jogo da velha</h2>
+    <h2>Jogo do Galo</h2>
 
     <!-- tela inicial -->
     <div class="principal" *ngIf="showInicio">
@@ -7,12 +7,20 @@
     </div>
 
     <!-- tabuleiro -->
-    <div *ngIf="showTabuleiro">
+    <div *ngIf="showTabuleiro" class="jogo">
+
         <ul>
-            <li class="kz-border-bottom kz-border-right" [class.kz-img-x]="exibirX(0, 0)"
-                [class.kz-img-o]="exibirO(0, 0)" [class.kz-cor-vitoria]="exibirVitoria(0, 0)" (click)="jogar(0, 0)">
+            <!-- com várias  -->
+            <li
+            class="kz-border-bottom kz-border-right"
+            [class.kz-img-x]="exibirX(0, 0)"
+            [class.kz-img-o]="exibirO(0, 0)"
+            [class.kz-cor-vitoria]="exibirVitoria(0, 0)"
+            (click)="jogar(0, 0)">
             </li>
-            <li class="kz-border-bottom kz-border-right"
+            <!-- Com [ngClass] -->
+            <li
+            class="kz-border-bottom kz-border-right"
             [ngClass]="{ 
                 'kz-img-x': exibirX(0, 1),
                 'kz-img-o': exibirO(0, 1),
@@ -60,7 +68,7 @@
             <p *ngIf="jogador==1">Você perdeu...</p>
             <p *ngIf="jogador==0">O jogo terminou empatado...</p>
             <br />
-            <a href="#" class="botao" (click)="novoJogo()">
+            <a href="javascript: void(0);" class="botao" (click)="novoJogo()">
                 Jogar novamente
             </a>
         </span>

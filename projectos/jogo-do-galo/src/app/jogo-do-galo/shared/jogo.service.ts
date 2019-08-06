@@ -81,7 +81,7 @@ export class JogoService {
         this._jogador = (this._jogador === this.X) ? this.O : this.X; // passar a vez
 
         if (!this.vitoria && this.numMovimentos < 9) {
-            this.cpuJogar();
+            this.cpuJogar()
         }
 
         // houve vitória
@@ -189,7 +189,6 @@ export class JogoService {
     }
 
     // Retorna se a peça X deve ser exibida para a coordenada informada.
-
     exibirX(posX: number, posY: number): boolean {
         return this.tabuleiro[posX][posY] === this.X;
     }

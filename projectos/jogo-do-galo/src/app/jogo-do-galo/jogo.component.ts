@@ -9,7 +9,7 @@ import { JogoService } from './shared/jogo.service';
 export class JogoComponent implements OnInit {
 
     constructor(private jogoService: JogoService) {}
-
+    
     ngOnInit() {
         this.jogoService.inicializar();
     }
@@ -28,6 +28,30 @@ export class JogoComponent implements OnInit {
 
     iniciarJogo(): void {
         this.jogoService.iniciarJogo();
+    }
+
+    jogar(posX: number, posY: number): void {
+        this.jogoService.jogar(posX, posY);
+    }
+
+    exibirX(posX: number, posY: number): boolean {
+        return this.jogoService.exibirX(posX, posY);
+    }
+
+    exibirO(posX: number, posY: number) {
+        return this.jogoService.exibirO(posX, posY);
+    }
+
+    exibirVitoria(posX: number, posY: number): boolean {
+        return this.jogoService.exibirVitoria(posX, posY);
+    }
+
+    get jogador(): number {
+        return this.jogoService.jogador;
+    }
+
+    novoJogo(): void {
+        this.jogoService.novoJogo();
     }
 
 }
