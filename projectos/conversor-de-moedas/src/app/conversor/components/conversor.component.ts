@@ -33,12 +33,19 @@ export class ConversorComponent implements OnInit {
     init(): void {
         this.conversao = new Conversao('USD', 'EUR', null);
         this.possuiErro = false;
-        console.log(this.conversao);
+        //console.log(this.conversao);
     }
 
     converter(): void {
         if (this.conversaoForm.form.valid) {
-            alert('Convertendo: ' + JSON.stringify(this.conversao))
+            //alert('Convertendo: ' + JSON.stringify(this.conversao))
+            this.conversorService.converter(this.conversao).subscribe(
+                response => this.conversaoResponse = response,
+                (error) => {
+                    this.possuiErro = true;
+                    console.log(error);
+                }
+            );
         }
     }
 

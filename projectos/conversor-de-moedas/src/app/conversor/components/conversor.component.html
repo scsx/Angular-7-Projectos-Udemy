@@ -48,4 +48,11 @@
             </div>
         </div>
     </form>
+
+    <app-modal-cotacao
+        [id]="'modalCotacao'"
+        [conversaoResponse]="conversaoResponse"
+        [conversao]="conversao"
+        (novaPesquisa)="init()">
+    </app-modal-cotacao>
 </div>
