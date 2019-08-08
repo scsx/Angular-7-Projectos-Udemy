@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html,
+body {
+    background-color: #F0F1F4 !important;
+}
+
+.navbar {
+    margin-bottom: 60px;
+    background-color: #272833;
+    border-bottom: 6px solid #202BFF;
+
+    h1 {
+        a.navbar-brand {
+            font-family: 'Crimson Text', serif;
+            font-size: inherit;
+        }
+    }
+}
+
+// form
+h3.select {
+    font-family: 'Crimson Text', serif;
+    margin-bottom: 20px;
+}
+
+form#mainForm {
+    .input-group {
+        width: 100%;
+    }
+
+    input.valor {
+        width: 60px;
+    }
+
+    .input-group-text {
+        border-right: none;
+    }
+}
