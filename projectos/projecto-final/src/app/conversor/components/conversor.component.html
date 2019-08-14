@@ -1,0 +1,58 @@
+<div class="alert alert-danger" role="alert" *ngIf="possuiErro">
+    Erro obtendo dados. Tente novamente.
+</div>
+
+<h3 class="select">Selecione a moeda a ser convertida</h3>
+
+<div class="text-center">
+    <form #conversaoForm="ngForm" class="form-inline" id="mainForm">
+        <div class="input-group mb-3">
+            <input
+                type="text"
+                name="valor"
+                class="form-control text-right valor"
+                placeholder="0"
+                required
+                numeroDirective
+                [(ngModel)]="conversao.valor">
+            <select
+                name="moedaDe"
+                class="form-control"
+                required
+                [(ngModel)]="conversao.moedaDe">
+                    <option *ngFor="let moeda of moedas" [value]="moeda.sigla">
+                        {{ moeda.sigla }} - {{ moeda.descricao }}
+                    </option>
+            </select>
+            <div class="input-group-append">
+                <span class="input-group-text">&#8594;</span>
+            </div>
+            <select
+                name="moedaPara"
+                class="form-control"
+                required
+                [(ngModel)]="conversao.moedaPara">
+                    <option *ngFor="let moeda of moedas" [value]="moeda.sigla">
+                        {{ moeda.sigla }} - {{ moeda.descricao }}
+                    </option>
+            </select>
+            <div class="input-group-append">
+                <input
+                type="submit"
+                value="Converter"
+                class="btn btn-success"
+                data-toggle="modal"
+                data-target="#modalCotacao"
+                (click)="converter()"
+                [disabled]="!conversaoForm.form.valid">
+            </div>
+        </div>
+    </form>
+
+    <app-modal-cotacao
+        [id]="'modalCotacao'"
+        [conversaoResponse]="conversaoResponse"
+        [conversao]="conversao"
+        (novaPesquisa)="init()">
+    </app-modal-cotacao>
+</div>

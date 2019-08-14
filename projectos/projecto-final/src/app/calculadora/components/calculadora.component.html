@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="calc">
+        <h1>calculadora</h1>
+    </div>
+    <div class="calc-body">
+        <div class="calc-screen">
+            <div class="calc-operation">
+                <!-- 2536 + 419 + -->
+                <!-- <span>{{ numero1 }}</span>
+                <span>{{ operacao }}</span>
+                <span>{{ numero2 }}</span> -->
+                <span *ngFor="let op of historico">
+                    {{ op }}
+                </span>
+            </div>
+            <div class="calc-typed">
+                <input type="text" class="tela" readonly [value]="display">
+                <!-- <span class="blink-me">_</sypan> -->
+            </div>
+        </div>
+        <div class="calc-button-row">
+            <div class="button" (click)="adicionarNumero('7')">7</div>
+            <div class="button" (click)="adicionarNumero('8')">8</div>
+            <div class="button" (click)="adicionarNumero('9')">9</div>
+            <div class="button l" (click)="definirOperacao('/')">/</div>
+        </div>
+        <div class="calc-button-row">
+            <div class="button" (click)="adicionarNumero('4')">4</div>
+            <div class="button" (click)="adicionarNumero('5')">5</div>
+            <div class="button" (click)="adicionarNumero('6')">6</div>
+            <div class="button l" (click)="definirOperacao('*')">x</div>
+        </div>
+        <div class="calc-button-row">
+            <div class="button" (click)="adicionarNumero('1')">1</div>
+            <div class="button" (click)="adicionarNumero('2')">2</div>
+            <div class="button" (click)="adicionarNumero('3')">3</div>
+            <div class="button l" (click)="definirOperacao('-')">−</div>
+        </div>
+        <div class="calc-button-row">
+            <div class="button double" (click)="adicionarNumero('0')">0</div>
+            <div class="button" (click)="adicionarNumero('.')">.</div>
+            <div class="button l" (click)="definirOperacao('+')">+</div>
+        </div>
+        <div class="calc-button-row">
+            <div class="button double c" (click)="limpar()">C</div>
+            <div class="button double l" (click)="calcular()">=</div>
+        </div>
+    </div>
+    <div class="calc">
+        <p>font: 'major mono display'</p>
+        <p><small><a href="https://github.com/scsx/Angular-7-Projectos-Udemy/tree/master/projectos/calculadora" target="_blank">github</a></small></p>
+    </div>
+</div>

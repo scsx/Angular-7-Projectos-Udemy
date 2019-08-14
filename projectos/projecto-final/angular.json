@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "dashboard": {
+        "projecto-final": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/dashboard",
+                        "outputPath": "dist/projecto-final",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -27,8 +27,8 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "src/styles.scss"
+                            "src/styles.scss",
+                            "node_modules/bootstrap/dist/css/bootstrap.min.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
@@ -61,18 +61,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "dashboard:build"
+                        "browserTarget": "projecto-final:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "dashboard:build:production"
+                            "browserTarget": "projecto-final:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "dashboard:build"
+                        "browserTarget": "projecto-final:build"
                     }
                 },
                 "test": {
@@ -87,9 +87,13 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.scss"
+                            "src/styles.scss",
+                            "node_modules/bootstrap/dist/css/bootstrap.min.css"
                         ],
-                        "scripts": []
+                        "scripts": [
+                            "node_modules/jquery/dist/jquery.min.js",
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js"
+                        ]
                     }
                 },
                 "lint": {
@@ -109,16 +113,16 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "dashboard:serve"
+                        "devServerTarget": "projecto-final:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "dashboard:serve:production"
+                            "devServerTarget": "projecto-final:serve:production"
                         }
                     }
                 }
             }
         }
     },
-    "defaultProject": "dashboard"
+    "defaultProject": "projecto-final"
 }
