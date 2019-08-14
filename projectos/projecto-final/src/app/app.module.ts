@@ -8,6 +8,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { CalculadoraModule } from './calculadora';
 import { ConversorModule } from './conversor/conversor.module';
 import { TarefasModule } from './tarefas/tarefas.module';
+import { JogoDoGaloModule } from './jogo-do-galo/jogo-do-galo.module';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { TarefasModule } from './tarefas/tarefas.module';
         CalculadoraModule,
         ConversorModule,
         TarefasModule,
+        JogoDoGaloModule,
         
         AppRoutingModule // deve ser sempre último
     ],

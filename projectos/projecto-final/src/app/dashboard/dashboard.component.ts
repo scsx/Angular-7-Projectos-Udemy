@@ -33,11 +33,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
     startGoogle(): void {
         if (typeof (google) !== 'undefined') {
-            google.charts.load('current', {
+            /* google.charts.load('current', {
                 'packages': ['corechart']
-            });
+            }); */
+            google.load("visualization", "1", { packages:["corechart"] });
             setTimeout(() => {
-                google.charts.setOnLoadCallback(this.exibirGraficos());
+                google.setOnLoadCallback(this.exibirGraficos());
             }, 1000); // dá tempo para a função carregar
         }
     }

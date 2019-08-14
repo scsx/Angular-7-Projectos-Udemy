@@ -12,25 +12,12 @@ export class ListarTarefaComponent implements OnInit {
 
     tarefas: Tarefa[];
 
-    //TESTES
-    /* tarefas: Tarefa[] = [
-        {id: 2441, nome: "Ovos", concluida: false, "prioridade": 2},
-        {id: 2441, nome: "Matar um cão", concluida: false},
-        {id: 2441, nome: "Tarefa concluida", concluida: true},
-        {id: 2441, nome: "Ir ao talho", concluida: false},
-        {id: 51651, nome: "Fazer curso", concluida: false}
-    ]; */
-
     constructor(private tarefaService: TarefaService) {}
 
     ngOnInit() {
         this.tarefas = this.obterTodas();
-        /* TESTES
-        this.tarefas.push(
-            new Tarefa(1, "Ir ao Brasil", true)
-        );
-        */
-       
+        
+        console.log("works");
         console.log(this.tarefas);
     }
 

@@ -12,19 +12,20 @@ export const TarefasRoutes: Routes = [
         component: TarefasRoutingComponent,
         children: [
             {
-                path: 'tarefas',
-                redirectTo: 'tarefas/listar'
+                path: '',
+                redirectTo: 'listar',
+                pathMatch: 'full'
             },
             {
-                path: 'tarefas/listar',
+                path: 'listar',
                 component: ListarTarefaComponent
             },
             {
-                path: 'tarefas/cadastrar',
+                path: 'cadastrar',
                 component: CadastrarTarefaComponent
             },
             {
-                path: 'tarefas/editar/:id',
+                path: 'editar/:id',
                 component: EditarTarefaComponent
             }
         ]
